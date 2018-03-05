@@ -3,7 +3,8 @@ import java.io.File;
 
 public class Part4 {
     public void findYoutubeLinks(){
-        String ur = "http://www.dukelearntoprogram.com/course2/data/manylinks.html";
+        String ur = "C:/Users/steffan/Downloads/Computer Science Articles.htm";
+        // String ur = "http://www.dukelearntoprogram.com/course2/data/manylinks.html";
         URLResource links = new URLResource(ur);
         String youtube = "youtube.com";
         for (String word : links.words()){
