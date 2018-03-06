@@ -26,5 +26,5 @@ public class Q1 {
            //findAbc("abcdkfjsksioehgjfhsdjfhksdfhuwabcabcajfieowj");
            findAbc("abcabcabcabca");
        }
-    
+       
 }
