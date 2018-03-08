@@ -74,7 +74,7 @@ public class weatherData {
         CSVRecord lowestSoFar = null;
         for (CSVRecord currentRow : parser) {
             String currentRowH = currentRow.get("Humidity");
-            if (currentRowH == "N/A") {
+            if (currentRowH.equals("N/A")) {
                 System.out.println("Humidity = 'N/A', skipping this record");
                 continue;
             }
@@ -149,5 +149,40 @@ public class weatherData {
         double averageT = averageTemperatureInFile(parser);
         System.out.println("Average temperature in file is " + averageT);
     }   
+    
+    
+    public double averageTemperatureWithHighHumidityInFile(CSVParser parser, int value) {
+        int tCounter = 0;
+        double temperatureSum = 0;
+        for (CSVRecord row : parser) {
+            String tempString = row.get("TemperatureF");
+            if (tempString == "-9999") {
+                System.out.println("Temperature = '-9999', skipping this record");
+                continue;
+            }
+            String humString = row.get("Humidity");
+            double humidity = Double.parseDouble(humString);
+            if (humidity >= value) {
+                double temperature = Double.parseDouble(tempString);
+                tCounter += 1;
+                temperatureSum += temperature;
+            }
+            
+        }
+        return temperatureSum/tCounter;
+    }    
+ 
+    public void testAverageTemperatureWithHighHumidityInFile() {
+        FileResource fr = new FileResource();        
+        CSVParser parser = fr.getCSVParser();  
+        int maxHumidity = 80;
+        double averageT = averageTemperatureWithHighHumidityInFile(parser, maxHumidity);
+        if (Double.isNaN(averageT)) {
+            System.out.println("No temepratures with that humidity");
+        }
+        else {
+            System.out.println("Average Temp when high Humidity is " + averageT);
+        }
+    }      
     
 }

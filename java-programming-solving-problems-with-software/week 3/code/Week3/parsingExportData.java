@@ -13,18 +13,18 @@ public class parsingExportData {
         // // Reset the parser
         // parser = fr.getCSVParser();
         
-        // String exportItem1 = "fish";
-        // String exportItem2 = "nuts";
-        // listExportersTwoProducts(parser, exportItem1, exportItem2); 
+        //String exportItem1 = "cotton";
+        //String exportItem2 = "flowers";
+        //listExportersTwoProducts(parser, exportItem1, exportItem2); 
         
         // // Reset the parser
         // parser = fr.getCSVParser();
-        // String exportItem = "gold";
-        // Integer numberOfExportingCountries = numberOfExporters(parser, exportItem);
-        // System.out.println(numberOfExportingCountries);
+        //String exportItem = "cocoa";
+        //Integer numberOfExportingCountries = numberOfExporters(parser, exportItem);
+        //System.out.println(numberOfExportingCountries);
         
         // Reset the parser
-        parser = fr.getCSVParser();
+        //parser = fr.getCSVParser();
         String amount = "$999,999,999,999";
         bigExporters(parser, amount); 
         
